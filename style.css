@@ -1,0 +1,237 @@
+/* External CSS for CIS Club Prototype */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #002a35;
+}
+
+/* ============================
+    NAVBAR (UPDATED + ANIMATED)
+    ============================ */
+nav {
+    background: #002f4b;
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 1.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* LOGO ALIGNMENT: Pushes logo to the far left on desktop/tablet */
+nav .logo {
+    margin-right: auto;
+}
+
+nav .logo img {
+    height: 55px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+nav .logo img:hover {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+/* NAVIGATION LINKS */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+    padding-bottom: 4px;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #00e5ff;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #00e5ff;
+    font-weight: 700;
+}
+
+/* ============================
+    PAGE STRUCTURE
+    ============================ */
+header, section {
+    padding: 60px 40px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* ============================
+    FOOTER
+    ============================ */
+footer {
+    background: #1b4052;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+}
+
+footer:hover {
+    background: #1a5a74;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #143844;
+}
+
+/* ============================
+    HAMBURGER BUTTON
+    ============================ */
+#menu-btn {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* ============================
+    RESPONSIVE DESIGN
+    ============================ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    nav {
+        padding: 14px 25px;
+    }
+
+    nav ul {
+        gap: 18px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    header, section {
+        padding: 50px 25px;
+    }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+
+    nav {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+        justify-content: space-between;
+    }
+
+    /* Mobile Logo Fixes: Remove auto margin and centering margin */
+    nav .logo {
+        margin-right: 0;
+    }
+
+    nav .logo img {
+        height: 50px;
+        margin: 0;
+    }
+
+    #menu-btn {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #002f4b;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 15px 0;
+        gap: 10px;
+        z-index: 998;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li a {
+        padding: 12px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.07);
+    }
+
+    nav ul li a:hover {
+        background: rgba(255, 255, 255, 0.15);
+        color: #00e5ff;
+    }
+
+    header, section {
+        padding: 40px 20px;
+    }
+}
+
+/* Small mobile (≤480px) */
+@media (max-width: 480px) {
+
+    nav .logo img {
+        height: 45px;
+    }
+
+    nav ul li a {
+        font-size: 15px;
+    }
+
+    header, section {
+        padding: 35px 18px;
+    }
+
+    footer {
+        font-size: 13px;
+    }
+}

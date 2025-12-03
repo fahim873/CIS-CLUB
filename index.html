@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CIS Club - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #002a35;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* GLOBAL ANIMATION */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zoomSlide {
+      0% {
+        transform: scale(1.1);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* SLIDER */
+    .slider-container {
+      width: 95%;
+      height: 65vh;
+      margin: 20px auto 10px auto;
+      overflow: hidden;
+      border-radius: 18px;
+      position: relative;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+      animation: fadeIn 1.3s ease;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      animation: zoomSlide 1.4s ease;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(92%);
+    }
+
+    /* DOTS */
+    .dots {
+      text-align: center;
+      margin-top: 14px;
+      animation: fadeIn 1.3s ease;
+    }
+
+    .dot {
+      height: 14px;
+      width: 14px;
+      margin: 0 6px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .dot.active {
+      background-color: #002f4b;
+      transform: scale(1.3);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, #003459, #006494);
+      color: white;
+      text-align: center;
+      padding: 100px 40px;
+      border-radius: 0 0 25px 25px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Floating Glow Effect */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      left: -60px;
+      width: 220px;
+      height: 220px;
+      background: rgba(255, 255, 255, 0.15);
+      filter: blur(70px);
+      animation: heroGlow 6s infinite alternate;
+    }
+
+    @keyframes heroGlow {
+      from {
+        transform: translate(0, 0);
+      }
+
+      to {
+        transform: translate(50px, 50px);
+      }
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
+
+    .hero a {
+      background: linear-gradient(to right, #00d4ff, #48cae4);
+      color: #002f4b;
+      padding: 16px 36px;
+      border-radius: 10px;
+      font-size: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.4s;
+      box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4);
+    }
+
+    .hero a:hover {
+      transform: translateY(-4px) scale(1.05);
+      background: linear-gradient(to right, #0096c7, #90e0ef);
+    }
+
+    /* UNIVERSAL CARD STYLE (AI FEST & CTA) */
+    .card {
+      width: 92%;
+      margin: 70px auto;
+      padding: 60px 50px;
+      background: white;
+      text-align: center;
+      border-radius: 20px;
+      border: 4px solid transparent;
+
+      background-image: linear-gradient(#ffffff, #ffffff),
+        linear-gradient(to right, #002f4b, #285c66);
+      background-clip: content-box, border-box;
+
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 1.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Floating Shine Animation */
+    .card::after {
+      content: "";
+      position: absolute;
+      top: -200px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      background: rgba(0, 180, 216, 0.18);
+      filter: blur(100px);
+      animation: floatShine 7s infinite ease-in-out;
+    }
+
+    @keyframes floatShine {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(100px, 80px);
+      }
+    }
+
+    .card h2 {
+      font-size: 58px;
+      margin-bottom: 20px;
+      font-weight: 900;
+      background: linear-gradient(to right, #002f4b, #194b61);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card p {
+      font-size: 24px;
+      color: #003049;
+      margin-bottom: 30px;
+    }
+
+    .card a {
+      padding: 16px 38px;
+      background: linear-gradient(to right, #0077b6, #00b4d8);
+      font-size: 20px;
+      text-decoration: none;
+      color: #1b505e;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 10px 22px rgba(0, 119, 182, 0.35);
+    }
+
+    .card a:hover {
+      transform: scale(1.1);
+      background: linear-gradient(to right, #0096c7, #48cae4);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-left">
+      <button id="menu-btn">&#9776;</button>
+    </div>
+
+    <div class="logo">
+      <img src="CIS_Club.png" alt="CIS Club Logo" id="logo-image">
+    </div>
+
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- SLIDER -->
+  <div class="slider-container">
+    <div class="slide"><img src="Hero_1.jpg"></div>
+    <div class="slide"><img src="Hero_2.jpg"></div>
+    <div class="slide"><img src="Hero_3.jpg"></div>
+  </div>
+
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Welcome to CIS Club</h1>
+    <p>The official club of the Department of Computing & Information Systems</p>
+  </section>
+
+  <!-- AI FEST -->
+  <section class="card">
+    <h2>AI Fest 2025</h2>
+    <p>The biggest annual celebration of AI, innovation & student creativity.</p>
+    <a href="events.html">Explore AI Fest</a>
+  </section>
+
+  <!-- JOIN CTA -->
+  <section class="card">
+    <h2>Become a Part of CIS Club</h2>
+    <p>Join our community of innovators, coders, and tech enthusiasts. Let's build the future together!</p>
+    <a href="members.html">Join Now</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="text-align: center;">© 2025 CIS Club, Daffodil International University. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    let slideIndex = 0;
+    let timer;
+
+    function showSlides() {
+      const slides = document.getElementsByClassName("slide");
+      const dots = document.getElementsByClassName("dot");
+
+      for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+
+      for (let i = 0; i < dots.length; i++) dots[i].classList.remove("active");
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].classList.add("active");
+
+      timer = setTimeout(showSlides, 5000);
+    }
+
+    function currentSlide(n) {
+      clearTimeout(timer);
+      slideIndex = n - 1;
+      showSlides();
+    }
+
+    showSlides();
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>

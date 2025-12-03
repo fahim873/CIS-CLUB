@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CIS Club - Gallery</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- INTERNAL CSS -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #002a35;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: linear-gradient(135deg, #0c879c, #065269);
+      color: #fff;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.2s;
+    }
+
+    header p {
+      font-size: 18px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.4s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* GALLERY GRID */
+    .gallery {
+      width: 90%;
+      margin: 50px auto;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* POPUP VIEW */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup img {
+      max-width: 85%;
+      max-height: 80%;
+      border-radius: 8px;
+      box-shadow: 0px 0px 15px #000;
+    }
+
+    /* CLOSE BUTTON */
+    .close-btn {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 45px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .close-btn:hover {
+      transform: scale(1.2);
+      color: #ff3b3b;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .gallery {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 400px) {
+      .gallery {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-left">
+      <button id="menu-btn">&#9776;</button>
+    </div>
+
+    <div class="logo">
+      <img src="CIS_Club.png" alt="CIS Club Logo" id="logo-image">
+    </div>
+
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HEADER -->
+  <header>
+    <h1>CIS Club Visual Showcase</h1>
+    <p>Celebrating the best moments of our community, creativity & culture.</p>
+  </header>
+
+  <!-- GALLERY SECTION -->
+  <div class="gallery">
+    <!-- Replace these image sources with your own images -->
+    <img src="Gallery/1.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/2.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/3.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/4.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/5.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/6.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/7.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/8.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/9.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/10.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/11.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/12.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/13.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/14.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/15.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/16.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/17.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/18.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/19.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/20.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/21.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/22.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/23.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/24.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/25.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/26.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/27.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/28.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/29.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/30.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/31.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/32.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/33.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/34.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/35.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/36.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/37.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/38.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/39.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/40.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/41.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/42.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/43.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/44.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/45.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/46.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/47.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/48.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/49.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/50.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/51.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/52.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/53.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/54.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/55.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/56.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/57.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/58.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/59.jpg" onclick="openPopup(this.src)">
+    <img src="Gallery/60.jpg" onclick="openPopup(this.src)">
+
+  </div>
+
+  <!-- POPUP VIEW -->
+  <div class="popup" id="popup">
+    <span class="close-btn" onclick="closePopup()">×</span>
+    <img id="popup-img">
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    function openPopup(src) {
+      document.getElementById("popup-img").src = src;
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="text-align: center;">© 2025 CIS Club, Daffodil International University. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

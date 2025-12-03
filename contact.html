@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIS Club - Contact</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #002a35;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: linear-gradient(135deg, #0c879c, #065269);
+      color: #fff;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.2s;
+    }
+
+    header p {
+      font-size: 18px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.4s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact-section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: space-between;
+    }
+
+    .contact-info,
+    .contact-form {
+      flex: 1 1 400px;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
+      margin-top: 0;
+      color: #0c5970;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .contact-form button {
+      background: #2b5369;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #245969;
+    }
+
+    footer {
+      background: #17596d;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    .social-icons {
+      margin: 15px 0;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 10px;
+      font-size: 22px;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #1b4249;
+    }
+
+    .contact-button {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 10px 20px;
+      background: #0b3542;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .contact-button:hover {
+      background: #47aeca;
+    }
+
+    @media (max-width: 768px) {
+      .contact-section {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-left">
+      <button id="menu-btn">&#9776;</button>
+    </div>
+
+    <div class="logo">
+      <img src="CIS_Club.png" alt="CIS Club Logo" id="logo-image">
+    </div>
+
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Get in Touch with Us</h1>
+    <p>Our team is ready to assist you with resources and guidance.</p>
+  </header>
+
+  <div class="contact-section">
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p><strong>Address:</strong> Daffodil International University</p>
+      <p><strong>Email:</strong> cisclub@diu.edu.bd</p>
+      <p><strong>Phone:</strong> 01639-507665</p>
+    </div>
+
+    <div class="contact-form">
+      <h2>Contact Form</h2>
+      <form>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <h3>Daffodil International University</h3>
+    <p>Address: Daffodil Smart City, Birulia, Savar, Dhaka, Bangladesh</p>
+    <a href="tel:+8801234567890" class="contact-button">Contact Us</a>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/diucisclub" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/880 1639-507665" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:cisclub@diu.edu.bd"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>© 2025 CIS Club, Daffodil International University. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

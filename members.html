@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CIS Club - Members</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- INTERNAL CSS -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #002a35;
+    }
+
+    h1 {
+      color: rgb(235, 235, 235);
+      text-align: center;
+    }
+
+    /* FORM BOX BASE STYLE */
+    .form-box {
+      width: 480px;
+      margin: 40px auto;
+      padding: 32px 40px;
+      border-radius: 20px;
+      color: #004d73;
+      background: white;
+      box-shadow: 0px 10px 28px rgba(0, 77, 115, 0.22);
+      animation: fadeIn 0.7s ease;
+      display: none;
+      transition: 0.3s ease-in-out;
+    }
+
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #004d73;
+      font-weight: 800;
+      font-size: 26px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 700;
+      color: #00344d;
+      letter-spacing: 0.3px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 14px;
+      margin-top: 8px;
+      border: 2px solid #0077a8;
+      border-radius: 12px;
+      font-size: 15px;
+      outline: none;
+      transition: 0.25s ease;
+      background: #f8fcff;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #004d73;
+      box-shadow: 0px 0px 10px rgba(0, 77, 115, 0.35);
+      background: white;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      margin-top: 6px;
+      margin-bottom: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* STYLING RADIO & CHECKBOX */
+    input[type="radio"],
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      accent-color: #0077a8;
+      cursor: pointer;
+    }
+
+    /* BUTTON SECTION */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .submit-btn,
+    .reset-btn {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      font-size: 17px;
+      font-weight: 800;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #0077a8, #004d73);
+      color: white;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(0, 77, 115, 0.25);
+    }
+
+    .submit-btn:hover {
+      background: linear-gradient(135deg, #004d73, #00344d);
+      transform: translateY(-2px);
+    }
+
+    .reset-btn {
+      background: #e6f4ff;
+      color: #004d73;
+      border: 2px solid #0077a8;
+    }
+
+    .reset-btn:hover {
+      background: #d2edff;
+    }
+
+    /* FORM THEMES */
+    #memberForm {
+      border-left: 9px solid #0077a8;
+    }
+
+    #trainerForm {
+      border-left: 9px solid #004d73;
+    }
+
+    #loginForm {
+      border-left: 9px solid #00334d;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: linear-gradient(135deg, #0c879c, #065269);
+      color: #fff;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.2s;
+    }
+
+    header p {
+      font-size: 18px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.4s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* FORM BUTTONS */
+    .btn-container {
+      text-align: center;
+      margin: 35px 0 20px;
+    }
+
+    .form-btn {
+      padding: 14px 24px;
+      margin: 8px;
+      border: none;
+      background: #0077a8;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0px 4px 10px rgba(0, 77, 115, 0.2);
+    }
+
+    .form-btn:hover {
+      background: #004d73;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-left">
+      <button id="menu-btn">&#9776;</button>
+    </div>
+
+    <div class="logo">
+      <img src="CIS_Club.png" alt="CIS Club Logo" id="logo-image">
+    </div>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Join With Uss</h1>
+    <p>We are Open We are Looking for Memberzzz!!!</p>
+  </header>
+
+  <!-- Club Benefits Section -->
+  <div
+    style="width: 60%; margin: auto; background:rgb(124, 202, 212); padding:20px; border-radius:10px; box-shadow:0px 0px 10px #ccc;">
+    <h2 style="color:#220909;">Benefits of DIU CIS Club</h2><br>
+    <p>
+      <b>1. Hands-On Tech Skills – Learn AI, IoT, programming, and modern technologies with real practical sessions.
+      </b>
+      <br><br>
+      <b>2. Industry-Level Exposure – Get connected with experts, alumni, and IT professionals. </b> <br><br>
+      <b>3. Powerful Networking – Build a strong circle of talented students, mentors, and innovators. </b> <br><br>
+      <b>4. Career Boost – Gain internship support, CV guidance, and project-building opportunitieies. </b> <br><br>
+      <b>5. Leadership Growth – Improve teamwork, communication, and event-management skills.</b> <br><br>
+      <b>6. Premium Workshops & Events – Access exclusive seminars, hackathons, and tech competitions. </b> <br><br>
+      <b>7. Strong Community Support – Learn, grow, and collaborate in a friendly tech-driven environment. </b>
+      <br><br>
+      <b>8.Portfolio Enhancement – Build real projects that make your CV and GitHub stand out. </b> <br>
+    </p>
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="btn-container">
+    <button class="form-btn" onclick="showForm('memberForm')">Become a New Member</button>
+    <button class="form-btn" onclick="showForm('trainerForm')">Become a Trainer</button>
+    <button class="form-btn" onclick="showForm('loginForm')">Login</button>
+  </div>
+
+  <!-- NEW MEMBER FORM -->
+  <div class="form-box" id="memberForm">
+    <h2>New Member Registration</h2>
+
+    <form onsubmit="return validateDIUEmail('memberEmail')">
+      <label>Name:</label>
+      <input type="text" required>
+
+      <label>Student ID:</label>
+      <input type="text" required>
+
+      <label>Department Name:</label>
+      <input type="text" required>
+
+      <label>Batch:</label>
+      <input type="text" required>
+
+      <label>Gender:</label><br>
+      <input type="radio" name="gender" value="Male" required> Male <br><br>
+      <input type="radio" name="gender" value="Female" required> Female
+      <br><br>
+
+      <label>Interests:</label><br>
+      <input type="checkbox" required> Programming <br><br>
+      <input type="checkbox"> Research <br><br>
+      <input type="checkbox"> Cultural <br><br>
+      <input type="checkbox"> Sports
+      <br><br>
+
+      <label>Phone:</label>
+      <input type="text" required>
+
+      <label>Email (@diu.edu.bd):</label>
+      <input type="email" id="memberEmail" required>
+
+      <label>How did you know about CIS Club?</label>
+      <select required>
+        <option value="">Select Option</option>
+        <option>Facebook</option>
+        <option>Website</option>
+        <option>Friends</option>
+        <option>Social Media</option>
+        <option>Campus Event</option>
+      </select> <br><br>
+
+      <button class="submit-btn" type="submit">Submit</button> <button class="submit-btn"
+        type="reset">Reset</button><br><br>
+      <p id="memberSuccess" style="color:rgb(19, 106, 156); font-weight: bold;"></p>
+
+    </form>
+  </div>
+
+  <!-- TRAINER FORM -->
+  <div class="form-box" id="trainerForm">
+    <h2>Trainer Registration</h2>
+
+    <form onsubmit="return validateDIUEmail('trainerEmail')">
+
+      <label>Name:</label>
+      <input type="text" required>
+
+      <label>Student ID:</label>
+      <input type="text" required>
+
+      <label>Department Name:</label>
+      <input type="text" required>
+
+      <label>Batch:</label>
+      <input type="text" required>
+
+      <label>Gender:</label><br>
+      <input type="radio" name="gender2" value="Male" required> Male <br><br>
+      <input type="radio" name="gender2" value="Female" required> Female
+      <br><br>
+
+      <label>Skills:</label><br>
+      <input type="checkbox"> C <br><br>
+      <input type="checkbox"> C++ <br><br>
+      <input type="checkbox"> Java<br><br>
+      <input type="checkbox"> Python<br><br>
+      <input type="checkbox"> SQL<br><br>
+      <input type="checkbox"> SpringBoot<br><br>
+      <input type="checkbox"> Linux<br><br>
+      <input type="checkbox"> Django<br><br>
+      <input type="checkbox"> JavaScript<br><br>
+      <input type="checkbox"> NodeJS<br><br>
+      <input type="checkbox"> ReactJS<br><br>
+      <input type="checkbox"> Docker
+      <br><br>
+
+      <label>Training Area:</label><br>
+      <input type="radio" name="area" required> Front-end Development<br><br>
+      <input type="radio" name="area"> Back-end Development<br><br>
+      <input type="radio" name="area"> MERN Stack Development<br><br>
+      <input type="radio" name="area"> Database Management<br><br>
+      <input type="radio" name="area"> Problem Solving<br><br>
+      <input type="radio" name="area"> Machine Learning<br><br>
+      <input type="radio" name="area"> Artificial Intelligence<br><br>
+      <input type="radio" name="area"> Programming Language Trainer
+      <br><br>
+
+      <label>Phone:</label>
+      <input type="text" required>
+
+      <label>Email (@diu.edu.bd):</label>
+      <input type="email" id="trainerEmail" required><br><br>
+
+      <button class="submit-btn" type="submit">Submit</button> <button class="submit-btn"
+        type="reset">Reset</button><br><br>
+      <p id="trainerSuccess" style="color: rgb(19, 106, 156); font-weight: bold;"></p>
+
+    </form>
+  </div>
+
+  <!-- LOGIN FORM -->
+  <div class="form-box" id="loginForm">
+    <h2>Login</h2>
+
+    <form onsubmit="return validateDIUEmail('loginEmail')">
+
+      <label>Email (@diu.edu.bd):</label>
+      <input type="email" id="loginEmail" required>
+
+      <label>Password:</label>
+      <input type="password" required minlength="6"><br><br>
+
+      <button class="submit-btn" type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 CIS Club, Daffodil International University. All Rights Reserved.
+  </footer>
+
+  <!-- INTERNAL JS -->
+  <script>
+    function showForm(id) {
+      document.getElementById("memberForm").style.display = "none";
+      document.getElementById("trainerForm").style.display = "none";
+      document.getElementById("loginForm").style.display = "none";
+
+      document.getElementById(id).style.display = "block";
+      window.scrollTo(0, 400);
+    }
+
+    function validateDIUEmail(id) {
+      let email = document.getElementById(id).value;
+      let pattern = /@diu\.edu\.bd$/;
+
+      if (!pattern.test(email)) {
+        alert("Please use a valid DIU email (example@diu.edu.bd)");
+        return false;
+      }
+
+      // Select success message area
+      let successMsg = (id === "memberEmail")
+        ? document.getElementById("memberSuccess")
+        : document.getElementById("trainerSuccess");
+
+      // Show message
+      successMsg.innerText = "Your form is submitted successfully!";
+
+      // Reset form automatically
+      document.getElementById(id).closest("form").reset();
+
+      // Prevent actual form submission
+      return false;
+    }
+    document.getElementById(id).closest("form").reset();
+
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>

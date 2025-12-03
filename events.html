@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CIS Club - Events</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #002a35
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: linear-gradient(135deg, #0c879c, #065269);
+      color: #fff;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.2s;
+    }
+
+    header p {
+      font-size: 18px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.4s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .filter-buttons {
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .filter-buttons button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      background: #004d73;
+      color: white;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filter-buttons button.active,
+    .filter-buttons button:hover {
+      background: #0077a8;
+    }
+
+    .event-container {
+      width: 90%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-bottom: 40px;
+    }
+
+    .event-card {
+      height: 260px;
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 2.0s;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .event-card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .card-front img {
+      width: 100%;
+      height: 80%;
+      object-fit: cover;
+    }
+
+    .card-front h3 {
+      height: 20%;
+      padding: 10px;
+      background: #e3eef5;
+      color: #003b5c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .card-back {
+      background: #003b5c;
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .card-back p {
+      font-size: 15px;
+      margin: 0;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .join-btn {
+      padding: 8px 20px;
+      background: #00b4d8;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .join-btn:hover {
+      background: #48cae4;
+    }
+
+    @media (max-width: 1024px) {
+      .event-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .event-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-left">
+      <button id="menu-btn">&#9776;</button>
+    </div>
+
+    <div class="logo">
+      <img src="CIS_Club.png" alt="CIS Club Logo" id="logo-image">
+    </div>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <header>
+    <h1>Explore DIU CIS Club Events</h1>
+    <p style="text-align: center;">Inspiring innovation, building skills, and shaping the next generation of AI-driven
+      problem solvers.
+    </p>
+  </header>
+
+  <div class="filter-buttons">
+    <button class="active" onclick="filterEvents('all')">All</button>
+    <button onclick="filterEvents('fest')">Fest</button>
+    <button onclick="filterEvents('bootcamp')">Bootcamp</button>
+    <button onclick="filterEvents('seminar')">Seminar</button>
+    <button onclick="filterEvents('sport')">Sport</button>
+    <button onclick="filterEvents('cultural')">Cultural</button>
+  </div>
+
+  <div class="event-container">
+
+    <!-- ===== FEST ===== -->
+    <div class="event-card fest">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/AI_Fest.jpg">
+          <h3>AI Fest 2025</h3>
+        </div>
+        <div class="card-back">
+          <p>Problem Solving • PromptX • AI Project Showcase…</p>
+          <a href="join_ai_fest.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card fest">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/Language_Fest.jpg">
+          <h3>Language Fest</h3>
+        </div>
+        <div class="card-back">
+          <p>Inter-University Language carnival with competitions…</p>
+          <a href="join_tech_carnival.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card fest">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/Data_Science_Summit.jpg">
+          <h3>Data Science Summit</h3>
+        </div>
+        <div class="card-back">
+          <p>Showcase of student Data Science projects. Collaboration with DIU Software Engineering Club & DIU Data
+            Science Club…</p>
+          <a href="join_innovation_fest.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== BOOTCAMP ===== -->
+    <div class="event-card bootcamp">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/C_bootcamp.jpg">
+          <h3>C Programming Bootcamp</h3>
+        </div>
+        <div class="card-back">
+          <p>3 day advanced C Programming bootcamp for begginers…</p>
+          <a href="join_c.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card bootcamp">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/Coding_bootcamp.jpg">
+          <h3>Coding Bootcamp</h3>
+        </div>
+        <div class="card-back">
+          <p>Basic Programming Bootcamp for beginners…</p>
+          <a href="coding.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card bootcamp">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/Chatgpt_Bootcamp.jpg">
+          <h3>Chatgpt Bootcamp</h3>
+        </div>
+        <div class="card-back">
+          <p>Teaching about how prompt works and how to learn code using Chatgpt…</p>
+          <a href="chatgpt.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card bootcamp">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/Fun_with_Code_Bootcamp.jpg">
+          <h3>Fun With Code</h3>
+        </div>
+        <div class="card-back">
+          <p>Learn Programming and Enjoy the programming with Fun With Code Event. A Day long program…</p>
+          <a href="join_funwithcode.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SEMINARS ===== -->
+    <div class="event-card seminar">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/Career_seminar.jpg">
+          <h3>Carrer Development in Web Technologies</h3>
+        </div>
+        <div class="card-back">
+          <p>Career Development Guidance from Mr. Nirjhor Anjum about Web Technologies…</p>
+          <a href="join_career-web-tech.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card seminar">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/Higher_Study_Seminar.jpg">
+          <h3>Career & Higher Study in USA</h3>
+        </div>
+        <div class="card-back">
+          <p>Explore the USA Higher Study & Career journey of Md. Moin Kabir…</p>
+          <a href="join_usa.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card seminar">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/higher_study_USA.jpg">
+          <h3>Career & Higher Study in USA</h3>
+        </div>
+        <div class="card-back">
+          <p>Explore the USA Higher Study & Career journey of Moonmoon Khanam…</p>
+          <a href="join_c_usa.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card seminar">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/IoT_seminar.jpg">
+          <h3>Open Dialogue about AI in IoT & ISAC</h3>
+        </div>
+        <div class="card-back">
+          <p>AI in IoT & ISAC Guidenlines from Md. Sarwar Hossain Mollah…</p>
+          <a href="join_Ai_Iot.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card seminar">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/Programming_Seminar.jpg">
+          <h3>You Can Start from Anywhere</h3>
+        </div>
+        <div class="card-back">
+          <p>A career guidelines seminar hosted by Motiullah Sajit…</p>
+          <a href="join_ycsfa.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card seminar">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/Telimedicine Seminar.jpg">
+          <h3>Doctime Telemedicine App</h3>
+        </div>
+        <div class="card-back">
+          <p>Seminar about Building a highly scalable technology platform Doctime a Telemedicine App…</p>
+          <a href="join_doctime.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card seminar">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/Web_seminar_python_django.jpg">
+          <h3>Web Application Development</h3>
+        </div>
+        <div class="card-back">
+          <p>Seminar about web application development using Django with Python…</p>
+          <a href="join_django_python.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SPORTS ===== -->
+    <div class="event-card sport">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/CIS_premier_league.jpg">
+          <h3>CIS Premier League</h3>
+        </div>
+        <div class="card-back">
+          <p>Inter-department cricket competition…</p>
+          <a href="join_cricket.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card sport">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/CIS_Futsal.jpg">
+          <h3>CIS Futsal - 2025</h3>
+        </div>
+        <div class="card-back">
+          <p>Inter-department football competition…</p>
+          <a href="join_sports.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CULTURAL ===== -->
+    <div class="event-card cultural">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/Orientation_Fall_2025.jpg">
+          <h3>Orientation Fall - 2025</h3>
+        </div>
+        <div class="card-back">
+          <p>Departmental Orientation for Fall-2025 arranged by DIU CIS Club…</p>
+          <a href="join_fall.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card cultural">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/Orientation_Summer_2025.jpg">
+          <h3>Orientation Summer - 2025</h3>
+        </div>
+        <div class="card-back">
+          <p>Departmental Orientation for Summer-2025 arranged by DIU CIS Club…</p>
+          <a href="join_summert.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card cultural">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/Meet_The_alumni.jpg">
+          <h3>Meet the Alumni</h3>
+        </div>
+        <div class="card-back">
+          <p>Meet the Alumni followed by Iftar Party arranged by DIU CIS Club…</p>
+          <a href="join_spring.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card cultural">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Event/Him_Utsob.jpg">
+          <h3>Him Utsab - 1431</h3>
+        </div>
+        <div class="card-back">
+          <p>Him Utsab 1431 Arranged by DIU CIS Club…</p>
+          <a href="join_food_fest.html" class="join-btn">Join</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="text-align: center;">© 2025 CIS Club, Daffodil International University. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function filterEvents(category) {
+      let cards = document.querySelectorAll(".event-card");
+      let buttons = document.querySelectorAll(".filter-buttons button");
+      buttons.forEach(btn => btn.classList.remove("active"));
+      event.target.classList.add("active");
+      cards.forEach(card => {
+        card.style.display = category === "all" || card.classList.contains(category) ? "block" : "none";
+      });
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CIS Club - Resources</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Inline CSS -->
+  <style>
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: linear-gradient(135deg, #0c879c, #065269);
+      color: #fff;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.2s;
+    }
+
+    header p {
+      font-size: 18px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.4s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESOURCE BLOCKS */
+    .resources-container {
+      width: 85%;
+      max-width: 1100px;
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .resource-block {
+      display: flex;
+      background: #ffffff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s;
+    }
+
+    .resource-block:hover {
+      transform: translateY(-5px);
+    }
+
+    .resource-img {
+      width: 40%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .resource-content {
+      width: 60%;
+      padding: 20px;
+    }
+
+    .resource-content h2 {
+      margin: 0;
+      font-size: 24px;
+      color: #065269;
+    }
+
+    .resource-content p {
+      margin: 10px 0 20px;
+      color: #444;
+      font-size: 15px;
+    }
+
+    .resource-content a {
+      display: inline-block;
+      background: #0c879c;
+      padding: 10px 18px;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .resource-content a:hover {
+      background: #065269;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .resource-block {
+        flex-direction: column;
+      }
+
+      .resource-img {
+        width: 100%;
+        height: 200px;
+      }
+
+      .resource-content {
+        width: 100%;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-left">
+      <button id="menu-btn">&#9776;</button>
+    </div>
+
+    <div class="logo">
+      <img src="CIS_Club.png" alt="CIS Club Logo" id="logo-image">
+    </div>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>CIS Club Resource Vault</h1>
+    <p>Discover resources and tools to elevate your coding and tech skills.</p>
+  </header>
+
+  <!-- RESOURCE BLOCKS SECTION -->
+  <div class="resources-container">
+
+    <!-- BLOCK 1 -->
+    <div class="resource-block">
+      <img src="Resorc_Pic/academic.png" class="resource-img">
+      <div class="resource-content">
+        <h2>Accademic E-Books Collection</h2>
+        <p>Download free PDF resources for Computer Architecture, Data Structures, Algorithms & more.</p>
+        <a href="https://drive.google.com/drive/folders/1tpFCs-1d9mNZmLIP0MUzKOh9YQXSWQn2?usp=sharing"
+          target="_blank">Explore</a>
+      </div>
+    </div>
+
+    <!-- BLOCK 2 -->
+    <div class="resource-block">
+      <img src="Resorc_Pic/programming.png" class="resource-img">
+      <div class="resource-content">
+        <h2>Programming E-Books Collection</h2>
+        <p>Download free PDF resources for C, C++, Java, Python & more.</p>
+        <a href="https://drive.google.com/drive/folders/1Y80_Ug1Lo-wk3h0s4IvrNWi4HGSlBnVG?usp=drive_link"
+          target="_blank">Explore</a>
+      </div>
+    </div>
+
+    <!-- BLOCK 3 -->
+    <div class="resource-block">
+      <img src="Resorc_Pic/skill.png" class="resource-img">
+      <div class="resource-content">
+        <h2>Design Templates & UI Kits</h2>
+        <p>Access modern UI/UX templates for websites, apps, and creative projects.</p>
+        <a href="https://drive.google.com/drive/folders/1ZTCRdoGEmgrxBUmgsxuHQXTkNixY5BOg?usp=drive_link"
+          target="_blank">Explore</a>
+      </div>
+    </div>
+
+    <!-- BLOCK 4 -->
+    <div class="resource-block">
+      <img src="Resorc_Pic/roadmap-cover.jpg" class="resource-img">
+      <div class="resource-content">
+        <h2>Roadmaps & Career Guidelines</h2>
+        <p>Explore and choose your path than start your journey from beginning.</p>
+        <a href="https://drive.google.com/drive/folders/1ZTCRdoGEmgrxBUmgsxuHQXTkNixY5BOg?usp=drive_link"
+          target="_blank">Explore</a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="text-align: center;">© 2025 CIS Club, Daffodil International University. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

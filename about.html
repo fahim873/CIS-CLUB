@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CIS Club - About</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #002a35;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: linear-gradient(135deg, #32cde9, #065269);
+      color: #fff;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.2s;
+    }
+
+    header p {
+      font-size: 18px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s forwards 0.4s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    section:nth-of-type(1) {
+      animation-delay: 0.5s;
+    }
+
+    section:nth-of-type(2) {
+      animation-delay: 0.7s;
+    }
+
+    section:nth-of-type(3) {
+      animation-delay: 0.9s;
+    }
+
+    h2 {
+      color: #7dd2fa;
+      margin-bottom: 20px;
+      font-size: 32px;
+      text-align: center;
+    }
+
+    h3 {
+      color: #c4d6e0;
+      margin-bottom: 20px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 16px;
+      text-align: justify;
+    }
+
+    /* TEAM GRID */
+    .cards-container {
+      max-width: 1300px;
+      margin: auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .member-card {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      perspective: 1200px;
+    }
+
+    .member-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 2.0s;
+    }
+
+    .member-card:hover .member-inner {
+      transform: rotateY(180deg);
+    }
+
+    .member-front,
+    .member-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      backface-visibility: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+      background: #fff;
+    }
+
+    /* FRONT side */
+    .member-front img {
+      width: 100%;
+      height: 80%;
+      object-fit: cover;
+    }
+
+    .member-info {
+      height: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .member-info h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #072a3d;
+    }
+
+    .member-info p {
+      margin: 2px 0 0;
+      font-size: 14px;
+      color: #4a3e5a;
+    }
+
+    /* BACK side */
+    .member-back {
+      background: #76c1e9;
+      color: #272726;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .member-back h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #300641;
+    }
+
+    .member-back p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-left">
+      <button id="menu-btn">&#9776;</button>
+    </div>
+
+    <div class="logo">
+      <img src="CIS_Club.png" alt="CIS Club Logo" id="logo-image">
+    </div>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Discover CIS Club</h1>
+    <p style="text-align: center;">Connecting students, fostering innovation, and exploring cutting-edge technologies.
+    </p>
+  </header>
+
+  <section>
+    <h2>Mission</h2>
+    <h3><b>The mission of the DIU CIS Club is to build and nurture a vibrant, inclusive, and
+        forward-thinking community of
+        students passionate about computing, information systems, and cutting-edge technologies such as artificial
+        intelligence, the Internet of Things, and smart solutions. The club is dedicated to empowering members by
+        developing their technical expertise, critical thinking, creativity, and problem-solving abilities, while also
+        fostering essential soft skills like leadership, teamwork, communication, and innovation.</h3>
+    <h3>Through workshops, seminars, hackathons, coding competitions, project-based learning, and collaborative
+      research,
+      the club provides students with hands-on opportunities to explore emerging technologies and gain practical
+      experience. Beyond technical growth, the club emphasizes ethical computing, social responsibility, and the role of
+      technology in addressing societal challenges.<h3>
+  </section>
+
+  <section>
+    <h2>History</h2>
+    <h3>The CIS Club was founded at Daffodil International University (DIU) to connect students passionate about
+      computing and technology. Over the years, the club has organized coding competitions, hackathons, and workshops.
+      We have partnered with industry professionals to provide mentorship and built a strong community of students
+      dedicated to innovation and problem-solving.</h3>
+  </section>
+
+  <div class="team-container">
+
+    <div class="cards-container">
+
+      <!-- 1 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/sarwar.jpg">
+            <div class="member-info">
+              <h3>Sarwar Hossain Mollah</h3>
+              <p style="text-align: center;">Position</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Sarwar Hossain Mollah</h3>
+            <p style="text-align: center;">Sarwar Sir is the advisor of DIU CIS Club. He is the Head of the department
+              of Computing & Information System & he is an Assistant professor of the department under FSIT.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/mehedi.jpg">
+            <div class="member-info">
+              <h3>Mehedi Hasan</h3>
+              <p style="text-align: center;">Advisor</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Mehedi Hasan</h3>
+            <p style="text-align: center;">Mehedi Sir is the Advisor of DIU CIS Club. He is the Senior Lecturer at
+              Computing & information System department under FSIT.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 3 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/Israfil.jpg">
+            <div class="member-info">
+              <h3>Mr. Israfil</h3>
+              <p style="text-align: center;">Convener</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Mr. Israfil</h3>
+            <p style="text-align: center;">Israfil sir is the Convener of DIU CIS Club. He is a lecturer of department
+              of Computing & Information Sytem under FSIT. Also he is an Alumni of the department.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/tamanna.jpg">
+            <div class="member-info">
+              <h3>Tamanna Akter</h3>
+              <p style="text-align: center;">Co-Convener</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Tamanna Akter</h3>
+            <p style="text-align: center;">Tamanna maam is the Co-Convener of DIU CIS Club. She is the lecturer of
+              English at Daffodil Internation University. She is also an Alumni of the university under the department
+              of English.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 5 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/mabia.jpg">
+            <div class="member-info">
+              <h3>Mabia Akonda Jemi</h3>
+              <p style="text-align: center;">President</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Mabia Akonda Jemi</h3>
+            <p style="text-align: center;">Mabia Akonda Jemi is the President of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 6 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/pisah.jpg">
+            <div class="member-info">
+              <h3>Ariful Haque Piash</h3>
+              <p style="text-align: center;">Vice-President</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Ariful Hawue Piash</h3>
+            <p style="text-align: center;">Ariful Haque Pisah is a Vice-President of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 7 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/sinthi.jpg">
+            <div class="member-info">
+              <h3>Sinthia Islam Ritu</h3>
+              <p style="text-align: center;">Vice-President</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Sinthia Islam Ritu</h3>
+            <p style="text-align: center;">Sinthia Islam Ritu is a Vice-President of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 8 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/delower.jpg">
+            <div class="member-info">
+              <h3>Delower Hossain</h3>
+              <p style="text-align: center;">Vice-President</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Delower Hossain</h3>
+            <p style="text-align: center;">Delower Hossain is a Vice-President of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 9 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/atik.jpg">
+            <div class="member-info">
+              <h3>A.F.M Shah Arafin Atiq</h3>
+              <p style="text-align: center;">General Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>A.F.M Shah Arafin Atiq</h3>
+            <p style="text-align: center;">A.F.M Shah Arafin Atiq is the General Secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 10 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/nahian.jpg">
+            <div class="member-info">
+              <h3>Samiul Haque Ann Nahian</h3>
+              <p style="text-align: center;">Position</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Samiul Haque Ann Nahian</h3>
+            <p style="text-align: center;">Samiul Haque Ann Nahian is a joint secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 11 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/sami.jpg">
+            <div class="member-info">
+              <h3>Md. Samiul Islam</h3>
+              <p style="text-align: center;">Joint Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Md. Samiul Islam</h3>
+            <p style="text-align: center;">Md. Samiul Islam is the Joint Secretary of DIU CIS Club.
+            <div class="collapse" id="contentId"></div>
+            .</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/shimu.jpg">
+            <div class="member-info">
+              <h3>Shumaia Jaman Shimu</h3>
+              <p style="text-align: center;">Joint Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Shumaia Jaman Shimu</h3>
+            <p style="text-align: center;">Shumaia Jaman Shimu is the Joint Secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 13 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/disha.jpg">
+            <div class="member-info">
+              <h3>Sanjana Noor Disha</h3>
+              <p style="text-align: center;">Treasurer</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Sanjana Noor Disha</h3>
+            <p style="text-align: center;">Sanjana Noor Disha is a treasurer of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/akash.jpg">
+            <div class="member-info">
+              <h3>Jobaied Chowdhury Akash</h3>
+              <p style="text-align: center;">Organizing Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Jobaied Chowdhury Akash</h3>
+            <p style="text-align: center;">Jobaied Chowdhury Akash is the Organizing Secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/nusrat.jpg">
+            <div class="member-info">
+              <h3>Nusrat Jahan Jitu</h3>
+              <p style="text-align: center;">Deputy Organizing Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Nusrat Jahan Jitu</h3>
+            <p style="text-align: center;">Nusrat Jahan Jitu is a Deputy Organizing Secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/pallab.jpg">
+            <div class="member-info">
+              <h3>Indrojit Sarkar Pallab</h3>
+              <p style="text-align: center;">Deputy Organizing Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Indrojit Sarkar Pallab</h3>
+            <p style="text-align: center;">Indrojit Sarkar Pallab is a Deputy Organizing Secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/sithil.jpg">
+            <div class="member-info">
+              <h3>MD. Mahid Alam Marin</h3>
+              <p style="text-align: center;">Deputy Organizing Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>MD. Mahid Alam Marin</h3>
+            <p style="text-align: center;">MD. Mahid Alam Marin is a Deputy Organizing Secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 18 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/samin_ur_rahman.jpg">
+            <div class="member-info">
+              <h3>T.M. Samin Ur Rahman</h3>
+              <p style="text-align: center;">Design Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>T.M. Samin Ur Rahman</h3>
+            <p style="text-align: center;">T.M. Samin Ur Rahman is the Design Secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 19 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/golam_rabbi.jpg">
+            <div class="member-info">
+              <h3>Golam Rabbi</h3>
+              <p style="text-align: center;">Deputy Design Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Golam Rabbi</h3>
+            <p style="text-align: center;">Golam Rabbi is the Deputy Design Secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 20 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/nafisa_nusrat.jpg">
+            <div class="member-info">
+              <h3>Nafisa Tabassum Nusrat</h3>
+              <p style="text-align: center;">Deputy Design Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Nafisa Tabassum Nusrat</h3>
+            <p style="text-align: center;">Nafisa Tabassum Nusrat is the Deputy Design Secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 21 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/ruhit.jpg">
+            <div class="member-info">
+              <h3>Mushfiqul Islam Ruhit</h3>
+              <p style="text-align: center;">Media Secreatary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Mushfiqul Islam Ruhit</h3>
+            <p style="text-align: center;">Mushfiqul Islam Ruhit is the Media Secreatary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 22 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/rayhan.jpg">
+            <div class="member-info">
+              <h3>Md. Rayhan Parvaz</h3>
+              <p style="text-align: center;">Deputy Media Secreatary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Md. Rayhan Parvaz</h3>
+            <p style="text-align: center;">Md. Rayhan Parvaz is the Deputy Media Secreatary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 23 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/masud.jpg">
+            <div class="member-info">
+              <h3>Masudur Rahman</h3>
+              <p style="text-align: center;">Editor</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Masudur Rahman</h3>
+            <p style="text-align: center;">Masudur Rahman is the Editor of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 24 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/tasnim.jpg">
+            <div class="member-info">
+              <h3>Tabassum Akter Tasnim</h3>
+              <p style="text-align: center;">Culutural Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Tabassum Akter Tasnim</h3>
+            <p style="text-align: center;">Tabassum Akter Tasnim is the Culutural Secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 25 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/pranto.jpg">
+            <div class="member-info">
+              <h3>Md. Abdul Ahad Pranto</h3>
+              <p style="text-align: center;">Deputy Cultural Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Md. Abdul Ahad Pranto</h3>
+            <p style="text-align: center;">Md. Abdul Ahad Pranto is the Deputy Cultural Secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 26 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/sajjad.jpg">
+            <div class="member-info">
+              <h3>Sajjad Hossain</h3>
+              <p style="text-align: center;">Sports Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Sajjad Hossain</h3>
+            <p style="text-align: center;">Sajjad Hossain is the Sports Secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 27 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/fuad_fahim.jpg">
+            <div class="member-info">
+              <h3>Md. Fuad Hasan Fahim</h3>
+              <p style="text-align: center;">Deputy Sports Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Md. Fuad Hasan Fahim</h3>
+            <p style="text-align: center;">Md. Fuad Hasan Fahim is the Deputy Sports Secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 28 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/jakaria_fahim.jpg">
+            <div class="member-info">
+              <h3>Md. Jakaria Hossain Fahim</h3>
+              <p style="text-align: center;">Press Secretary</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Md. Jakaria Hossain Fahim</h3>
+            <p style="text-align: center;">Md. Jakaria Hossain Fahim is the Press Secretary of DIU CIS Club.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 29 -->
+      <div class="member-card">
+        <div class="member-inner">
+          <div class="member-front">
+            <img src="Committe/jannatul_bony.jpg">
+            <div class="member-info">
+              <h3>Jannatul Ferdous Bony</h3>
+              <p style="text-align: center;">Secreatary of Public Relation.</p>
+            </div>
+          </div>
+          <div class="member-back">
+            <h3>Jannatul Ferdous Bony</h3>
+            <p style="text-align: center;"">Jannatul Ferdous Bony is the Secreatary of Public Relation in DIU CIS Club..
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 30 -->
+      <div class=" member-card">
+            <div class="member-inner">
+              <div class="member-front">
+                <img src="Committe/shehabul_alam.jpg">
+                <div class="member-info">
+                  <h3>Md. Shehabaul Alam</h3>
+                  <p style="text-align: center;">Deputy Secreatary of Public Relation</p>
+                </div>
+              </div>
+              <div class="member-back">
+                <h3>Md. Shehabaul Alam</h3>
+                <p style="text-align: center;">Md. Shehabaul Alam is a Deputy Secreatary of Public Relation in DIU CIS
+                  Club.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 31 -->
+          <div class="member-card">
+            <div class="member-inner">
+              <div class="member-front">
+                <img src="Committe/Pushpita.jpg">
+                <div class="member-info">
+                  <h3>Pushpita Halder Isha</h3>
+                  <p style="text-align: center;">Deputy Secreatary of Public Relation</p>
+                </div>
+              </div>
+              <div class="member-back">
+                <h3>Pushpita Halder Isha</h3>
+                <p style="text-align: center;">Pushpita Halder Isha is a Deputy Secreatary of Public Relation in DIU CIS
+                  Club.</p>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 32 -->
+          <div class="member-card">
+            <div class="member-inner">
+              <div class="member-front">
+                <img src="Committe/tahsin.jpg">
+                <div class="member-info">
+                  <h3>S.M. Tahsin Ul Karim</h3>
+                  <p style="text-align: center;">Deputy Secreatary of Public Relation</p>
+                </div>
+              </div>
+              <div class="member-back">
+                <h3>S.M. Tahsin Ul Karim</h3>
+                <p style="text-align: center;">S.M. Tahsin Ul Karim is a Deputy Secreatary of Public Relation in DIU CIS
+                  Club.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more members similarly -->
+
+        </div>
+        </section>
+
+        <footer>
+          <p style="text-align: center;">© 2025 CIS Club, Daffodil International University. All Rights
+            Reserved.</p>
+        </footer>
+        <script src="script.js"></script>
+</body>
+
+</html>
